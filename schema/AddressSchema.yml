@@ -1,0 +1,76 @@
+openapi: 3.0.3
+info:
+  title: Address API
+  version: 1.0.0
+  description: Address API
+paths:
+  /address:autocomplete:
+    post:
+      summary: Obtains address autocompletion
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddressRequest'
+      responses:
+        '200':
+          description: Successful
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/AddressResponse'
+  /address:autocompleteMock:
+    post:
+      summary: Obtains address autocompletion mock
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddressRequest'
+      responses:
+        '200':
+          description: Successful
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/AddressResponse'
+components:
+  schemas:
+    AddressRequest:
+      type: object
+      required:
+        - addressPrefix
+      properties:
+        addressPrefix:
+          type: string
+          description: Only accepts numbers and street names in an alphanumeric format.
+        city:
+          type: string
+          description: An optional city input used to filter suggestions. Case insensitive and does not match partial abbreviations.
+        state:
+          type: string
+          description: An optional state input used to filter suggestions. Case insensitive and does not match partial abbreviations.
+        zipCode:
+          type: string
+          description: An optional ZIP Code input used to filter suggestions. Matches partial entries.
+    AddressResponse:
+      type: object
+      properties:
+        completeAddress:
+          type: string
+          description: The primary delivery line (usually the street address) of the address.
+        city:
+          type: string
+          description: The name of the city.
+        state:
+          type: string
+          description: The ISO 3166-2 two letter code for the state.
+        zipCode:
+          type: string
+          description: US ZIP
