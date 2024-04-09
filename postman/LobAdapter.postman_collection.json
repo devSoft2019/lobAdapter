@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "88e6abc2-ed52-4f2c-9551-f1f3f064c861",
+		"_postman_id": "ac93e3a6-8809-4ec1-8c79-f282681c7f3e",
 		"name": "LobAdapter",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "7590455"
@@ -13,13 +13,13 @@
 					"type": "basic",
 					"basic": [
 						{
-							"key": "username",
-							"value": "demo-username",
+							"key": "password",
+							"value": "{{PASSWORD}}",
 							"type": "string"
 						},
 						{
-							"key": "password",
-							"value": "demo-password",
+							"key": "username",
+							"value": "{{USERNAME}}",
 							"type": "string"
 						}
 					]
@@ -36,12 +36,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/address:autocomplete",
-					"protocol": "http",
+					"raw": "{{URL}}/address:autocomplete",
 					"host": [
-						"localhost"
+						"{{URL}}"
 					],
-					"port": "8080",
 					"path": [
 						"address:autocomplete"
 					]
@@ -56,13 +54,13 @@
 					"type": "basic",
 					"basic": [
 						{
-							"key": "username",
-							"value": "demo-username",
+							"key": "password",
+							"value": "{{PASSWORD}}",
 							"type": "string"
 						},
 						{
-							"key": "password",
-							"value": "demo-password",
+							"key": "username",
+							"value": "{{USERNAME}}",
 							"type": "string"
 						}
 					]
@@ -79,12 +77,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/address:autocomplete",
-					"protocol": "http",
+					"raw": "{{URL}}/address:autocomplete",
 					"host": [
-						"localhost"
+						"{{URL}}"
 					],
-					"port": "8080",
 					"path": [
 						"address:autocomplete"
 					]
@@ -99,13 +95,13 @@
 					"type": "basic",
 					"basic": [
 						{
-							"key": "username",
-							"value": "demo-username",
+							"key": "password",
+							"value": "{{PASSWORD}}",
 							"type": "string"
 						},
 						{
-							"key": "password",
-							"value": "demo-password",
+							"key": "username",
+							"value": "{{USERNAME}}",
 							"type": "string"
 						}
 					]
@@ -122,12 +118,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/address:autocompleteMock",
-					"protocol": "http",
+					"raw": "{{URL}}/address:autocompleteMock",
 					"host": [
-						"localhost"
+						"{{URL}}"
 					],
-					"port": "8080",
 					"path": [
 						"address:autocompleteMock"
 					]
@@ -153,18 +147,53 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/address:autocomplete",
-					"protocol": "http",
+					"raw": "{{URL}}/address:autocomplete",
 					"host": [
-						"localhost"
+						"{{URL}}"
 					],
-					"port": "8080",
 					"path": [
 						"address:autocomplete"
 					]
 				}
 			},
 			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "USERNAME",
+			"value": "demo-username"
+		},
+		{
+			"key": "PASSWORD",
+			"value": "demo-password"
+		},
+		{
+			"key": "URL",
+			"value": "http://localhost:8080",
+			"type": "string"
 		}
 	]
 }

@@ -9,7 +9,7 @@
 ## Solution 
 
 ### Documentation
-Utilize Swagger to document under ```/schema/AddressSchema.yml```
+I used Swagger to document under ```/schema/AddressSchema.yml```
 
 ### Test app
 The solution is deployed on real server. URL and credentials will be provided to try it. 
